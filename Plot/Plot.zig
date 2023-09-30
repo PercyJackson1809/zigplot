@@ -13,7 +13,7 @@ pub fn Plot(comptime nPlots: usize) type {
 
             var output = std.ArrayList(u8).init(allocator);
             
-            //try output.append('"');
+            
 
             const outMode = self.config.output_mode;
 
@@ -76,7 +76,7 @@ pub fn Plot(comptime nPlots: usize) type {
                 }
 
                 if(subplot.title) |title| {
-                    try output.appendSlice(" '");
+                    try output.appendSlice(" title '");
                     try output.appendSlice(title);
                     try output.append('\'');
                 }
