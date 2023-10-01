@@ -13,8 +13,6 @@ pub fn Plot(comptime nPlots: usize) type {
 
             var output = std.ArrayList(u8).init(allocator);
             
-            
-
             const outMode = self.config.output_mode;
 
             if(outMode != Cfg.OutputMode.Default) {
@@ -55,6 +53,12 @@ pub fn Plot(comptime nPlots: usize) type {
                 try output.appendSlice("set ylabel ");
                 try output.appendSlice(label);
                 try output.append(';');
+            }
+
+            if(self.config.sepatator) |separator| {
+                try output.appendSlice("set datafile separator '");
+                try output.appendSlice(separator);
+                try output.appendSlice("';");
             }
 
             //-----------------Per Plot Config----------------------
