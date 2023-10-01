@@ -55,7 +55,7 @@ pub fn Plot(comptime nPlots: usize) type {
                 try output.append(';');
             }
 
-            if(self.config.sepatator) |separator| {
+            if(self.config.separator) |separator| {
                 try output.appendSlice("set datafile separator '");
                 try output.appendSlice(separator);
                 try output.appendSlice("';");
