@@ -1,5 +1,5 @@
 const std = @import("std");
-const PlotLib = @import("Plot");
+const PlotLib = @import("zigplot");
 const Cfg = PlotLib.PlotConfig;
 const SubCfg = PlotLib.SubPlotConfig;
 const Plot = PlotLib.Plot.Plot;
